@@ -191,24 +191,15 @@ main {
     }
 }
 
-
-
-ol {
-    list-style: none;
-    counter-reset: item;
+ol.instruction-list {
     
-}
+    color: var(--clr-brown-800);
 
-ol > li {
-    counter-increment: item;
-    margin-bottom: 0.94rem;
-    display: inline-flex;
-    gap: 0.94rem;
-    &::before {
-        content: counter(item)".";
-        display: inline-block;
-        font-weight: 700;
-        color: var(--clr-brown-800);
-
+    li {
+        &:not(:last-of-type) {
+            margin-block-end: 1.25rem;
+        }
+        > * { color: var(--clr-stone-600);}
+        padding-inline-start: 0.94rem;
     }
 }
