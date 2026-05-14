@@ -46,7 +46,7 @@ body {
     font-family: var(--font-2);
     line-height: 1.5;
     letter-spacing: 0rem;
-    font-size: 0.95rem;
+    font-size: clamp(1rem, calc(0.95rem + 1.5vw), 1.05rem);
     background-color: var(--clr-stone-100);
 }
 
@@ -82,7 +82,7 @@ main {
     }
 
     .recipe {
-        padding: 24px;
+        padding: 1.5rem;
         max-width: min(90%, 46.25rem);
         margin-inline: auto;
         margin-block: 6.25rem;
@@ -105,7 +105,7 @@ main {
     font-weight: 500;
     
     h1 {
-        font-size: 2.1rem;
+        font-size: clamp(1rem, calc(2.1rem + 1.5vw) ,2.1rem);
         line-height: 1.1;
         color: var(--clr-stone-900);
         font-family: var(--font-1);
@@ -124,7 +124,7 @@ main {
 
     h2 {
         font-family: var(--font-2);
-        font-size: 1.15rem;
+        font-size: clamp(1rem, calc(1.15rem + 1.5vw) ,1.15rem);
         font-weight: 600;
         color: var(--clr-rose-800);
         
@@ -147,7 +147,7 @@ main {
     li::before {
         content: "\2022";
         color: var(--clr-rose-800);
-        font-size: 1.5rem;
+        font-size: clamp(1rem, calc( 1.5rem + 1.5vw) ,1.5rem);
     }
 }
 
@@ -159,7 +159,7 @@ main {
     h2 {
         font-family: var(--font-1);
         color: var(--clr-brown-800);
-        font-size: 1.7rem;
+        font-size: clamp(1rem, calc(1.7rem + 1.5vw) ,1.7rem);
         font-weight: 500;
         margin-block-end: 0.94rem;
     }
@@ -173,10 +173,12 @@ main {
         margin-block: 0.94rem;
         border-collapse: collapse;
 
+        tr:not(:last-of-type) {
+            border-block-end: 1px solid var(--clr-stone-150);
+        }
+
         tr {
-            &:not(:last-of-type) {
-                border-block-end: 1px solid var(--clr-stone-150);
-            }
+
             th {
                 text-align: start;
                 font-weight: 400;
@@ -187,7 +189,7 @@ main {
                 font-weight: 500;
             }
         }
-        
+
     }
 }
 
